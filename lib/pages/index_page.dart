@@ -29,10 +29,9 @@ class IndexPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.instance = ScreenUtil(width: 750,height: 1334)..init(context);
+    ScreenUtil.init(context,width: 750,height: 1334,allowFontScaling: false);
     //取到当前索引状态值
     int currentIndex = Provider.of<CurrentIndexProvider>(context).currentIndex;
-
     return Scaffold(
       backgroundColor: Color.fromRGBO(244, 245, 245, 1.0),
       bottomNavigationBar: BottomNavigationBar(
