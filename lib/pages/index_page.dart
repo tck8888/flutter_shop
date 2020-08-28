@@ -29,22 +29,22 @@ class IndexPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.init(context,width: 750,height: 1334,allowFontScaling: false);
+    ScreenUtil.init(context, width: 750, height: 1334, allowFontScaling: false);
     //取到当前索引状态值
-    int currentIndex = Provider.of<CurrentIndexProvider>(context).currentIndex;
+    int currentIndex = context.watch<CurrentIndexProvider>().currentIndex;
     return Scaffold(
       backgroundColor: Color.fromRGBO(244, 245, 245, 1.0),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         currentIndex: currentIndex,
         items: bottomTabs,
-        onTap: (index){
-          Provider.of<CurrentIndexProvider>(context).changeIndex(index);
+        onTap: (index) {
+          context.read<CurrentIndexProvider>().changeIndex(index);
         },
       ),
       body: IndexedStack(
         index: currentIndex,
-        children:tabBodies,
+        children: tabBodies,
       ),
     );
   }
