@@ -1,5 +1,6 @@
 //const base_url = 'http://127.0.0.1:3000/';
-const base_url = 'http://192.168.0.103:3000/';
+//const base_url = 'http://192.168.0.103:3000/';
+const base_url = 'http://172.20.11.99:3000/';
 const servicePath = {
   'homePageContext':base_url + 'getHomePageContent',//首页数据
   'getHotGoods':base_url + 'getHotGoods',//火爆专区
